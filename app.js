@@ -13,6 +13,12 @@ app.get('/',(req,res)=>{
 
 })
 
+//Client Sends JWT:
+app.get('/read',(req,res)=>{
+    let data = jwt.verify(req.cookies.token,"secret");
+    console.log(data);
+})
+
 // set up the cookie
 // app.get('/',(req,res)=>{
 //     res.cookie("name","pratham guruji");
